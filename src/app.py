@@ -36,4 +36,5 @@ def predict_species(data: IrisInput):
     return {
         "prediction": str(species),
         "test": "test"
+        "hello world"
     }
