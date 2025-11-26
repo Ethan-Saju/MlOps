@@ -1,0 +1,65 @@
+[
+    {
+        "model_name": "RandomForestClassifier",
+        "metrics": {
+            "accuracy": 0.9,
+            "precision": 0.9023569023569024,
+            "recall": 0.9,
+            "f1_score": 0.8997493734335839
+        }
+    },
+    {
+        "model_name": "LogisticRegression",
+        "metrics": {
+            "accuracy": 0.9666666666666667,
+            "precision": 0.9696969696969696,
+            "recall": 0.9666666666666667,
+            "f1_score": 0.9665831244778613
+        }
+    },
+    {
+        "model_name": "SVC",
+        "metrics": {
+            "accuracy": 0.9666666666666667,
+            "precision": 0.9696969696969696,
+            "recall": 0.9666666666666667,
+            "f1_score": 0.9665831244778613
+        }
+    },
+    {
+        "model_name": "DecisionTreeClassifier",
+        "metrics": {
+            "accuracy": 0.9666666666666667,
+            "precision": 0.9696969696969696,
+            "recall": 0.9666666666666667,
+            "f1_score": 0.9665831244778613
+        }
+    },
+    {
+        "model_name": "GaussianNB",
+        "metrics": {
+            "accuracy": 0.9666666666666667,
+            "precision": 0.9696969696969696,
+            "recall": 0.9666666666666667,
+            "f1_score": 0.9665831244778613
+        }
+    },
+    {
+        "model_name": "KNeighborsClassifier",
+        "metrics": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0
+        }
+    },
+    {
+        "model_name": "GradientBoostingClassifier",
+        "metrics": {
+            "accuracy": 0.9666666666666667,
+            "precision": 0.9696969696969696,
+            "recall": 0.9666666666666667,
+            "f1_score": 0.9665831244778613
+        }
+    }
+]
