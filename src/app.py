@@ -34,5 +34,6 @@ def predict_species(data: IrisInput):
     species = le.inverse_transform([prediction])[0]
 
     return {
-        "prediction": str(species)
+        "prediction": str(species),
+        "test": "test"
     }
