@@ -6,6 +6,7 @@ on:
       - 'data/Iris.csv'
       - 'src/models.py'
       - 'src/main.py'
+      - 'src/app.py'
 
 jobs:
   retrain_and_build:
