@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
 
 model = joblib.load("src/best_model.pkl")
 
@@ -9,6 +10,19 @@ le = joblib.load("src/label_encoder.pkl")
 
 app = FastAPI(title="Iris Species Predictor")
 
+
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Request body model
 class IrisInput(BaseModel):
@@ -18,7 +32,7 @@ class IrisInput(BaseModel):
     petal_width: float
 
 
-@app.post("/predict")
+@app.post("/api/predict")
 def predict_species(data: IrisInput):
  
     input_array = np.array([[
