@@ -24,13 +24,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Request body model
 class IrisInput(BaseModel):
     sepal_length: float
     sepal_width: float
     petal_length: float
     petal_width: float
-
 
 @app.post("/api/predict")
 def predict_species(data: IrisInput):
@@ -42,14 +42,14 @@ def predict_species(data: IrisInput):
         data.petal_width
     ]])
 
-    prediction = model.predict(input_array)[0]   
+    prediction = model.predict(input_array)[0] 
+    model_name = type(model).__name__
 
 
     species = le.inverse_transform([prediction])[0]
 
     return {
         "prediction": str(species),
-        "test": "test",
-        "hello world":"hello",
-        "test2":"test2"
+        "model": model_name
     }
+
