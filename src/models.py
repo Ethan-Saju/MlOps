@@ -12,6 +12,6 @@ models = [
     SVC(probability=True),
     DecisionTreeClassifier(),
     GaussianNB(),
-    # KNeighborsClassifier(),
+    KNeighborsClassifier(),
     GradientBoostingClassifier()
 ]
