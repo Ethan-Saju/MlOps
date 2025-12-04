@@ -7,11 +7,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
 models = [
-    RandomForestClassifier(),
-    LogisticRegression(),
-    SVC(probability=True),
-    DecisionTreeClassifier(),
-    GaussianNB(),
+    # RandomForestClassifier(),
+    # LogisticRegression(),
+    # SVC(probability=True),
+    # DecisionTreeClassifier(),
+    # GaussianNB(),
     KNeighborsClassifier(),
     GradientBoostingClassifier()
 ]
