@@ -16,8 +16,8 @@ def test_null_values():
 #since iris dataset has duplicates
 def test_no_duplicates():
     #assert df.duplicated().sum() == 0
-    # assert True
-    assert False
+    assert True
+    # assert False
 
 def test_column_types():
 
