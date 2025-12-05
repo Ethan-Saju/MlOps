@@ -8,10 +8,10 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 models = [
     RandomForestClassifier(),
-    LogisticRegression(),
-    SVC(probability=True),
-    DecisionTreeClassifier(),
-    GaussianNB(),
-    KNeighborsClassifier(),
-    GradientBoostingClassifier()
+    # LogisticRegression(),
+    # SVC(probability=True),
+    # DecisionTreeClassifier(),
+    # GaussianNB(),
+    # KNeighborsClassifier(),
+    # GradientBoostingClassifier()
 ]
