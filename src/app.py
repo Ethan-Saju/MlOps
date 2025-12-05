@@ -13,7 +13,8 @@ app = FastAPI(title="Iris Species Predictor")
 
 origins = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://iris-fe-latest.onrender.com"
 ]
 
 app.add_middleware(
