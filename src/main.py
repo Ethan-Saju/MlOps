@@ -5,6 +5,9 @@ from sklearn.metrics import accuracy_score, classification_report
 from models import models 
 import json 
 
+import mlflow
+import mlflow.sklearn
+
 
 df = load_dataset()
 
@@ -28,53 +31,66 @@ best_model = dict()
 results = []
 
 
+mlflow.set_experiment("Iris Species Classification")
+
 for model in models:
 
     model_name = model.__class__.__name__
 
-    print(f"\nTraining Model: {model_name}")
+    with mlflow.start_run(run_name = model_name):
 
-    model.fit(X_train, y_train)     
+    
+        print(f"\nTraining Model: {model_name}")
 
-    y_pred = model.predict(X_test)                          
+        model.fit(X_train, y_train)     
 
-    accuracy = accuracy_score(y_test, y_pred)
+        y_pred = model.predict(X_test)                          
 
-    report = classification_report(y_test, y_pred, output_dict=True)
+        accuracy = accuracy_score(y_test, y_pred)
 
-    precision = report["weighted avg"]["precision"]
-    recall = report["weighted avg"]["recall"]
-    f1 = report["weighted avg"]["f1-score"]
+        report = classification_report(y_test, y_pred, output_dict=True)
 
-    current_model = {
-        "model": model,
-        "model_name": model_name,
-        "accuracy": accuracy
-    }
+        precision = report["weighted avg"]["precision"]
+        recall = report["weighted avg"]["recall"]
+        f1 = report["weighted avg"]["f1-score"]
 
-    if (not best_model) or (accuracy > best_model["accuracy"]):
-        best_model = current_model
-
-    model_result = {
-        "model_name": model_name,
-        "metrics": {
-            "accuracy": accuracy,
-            "precision": precision,
-            "recall": recall,
-            "f1_score": f1
+        current_model = {
+            "model": model,
+            "model_name": model_name,
+            "accuracy": accuracy
         }
-    }
 
-    results.append(model_result)
+        if (not best_model) or (accuracy > best_model["accuracy"]):
+            best_model = current_model
 
-with open("src/model_results.json", "w") as f:
-    json.dump(results, f, indent=4)
+        model_result = {
+            "model_name": model_name,
+            "metrics": {
+                "accuracy": accuracy,
+                "precision": precision,
+                "recall": recall,
+                "f1_score": f1
+            }
+        }
 
-with open("src/best_model_info.json", "w") as f:
-    json.dump({
-        "model_name": best_model["model_name"],
-        "accuracy": best_model["accuracy"]
-    }, f, indent=4)
+        mlflow.log_param("model_name", model_name)
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("precision", precision)
+        mlflow.log_metric("recall", recall)
+        mlflow.log_metric("f1_score", f1)
+
+        mlflow.sklearn.log_model(model, artifact_path="model")
+
+        results.append(model_result)
+
+# with open("src/model_results.json", "w") as f:
+#     json.dump(results, f, indent=4)
+
+# with open("src/best_model_info.json", "w") as f:
+#     json.dump({
+#         "model_name": best_model["model_name"],
+#         "accuracy": best_model["accuracy"]
+#     }, f, indent=4)
 
 import pickle
 

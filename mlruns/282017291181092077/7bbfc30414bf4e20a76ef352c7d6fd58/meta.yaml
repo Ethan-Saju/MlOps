@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ethansaju/Desktop/mlops/backend/mlruns/282017291181092077/7bbfc30414bf4e20a76ef352c7d6fd58/artifacts
+end_time: 1764997838924
+entry_point_name: ''
+experiment_id: '282017291181092077'
+lifecycle_stage: active
+run_id: 7bbfc30414bf4e20a76ef352c7d6fd58
+run_name: LogisticRegression
+run_uuid: 7bbfc30414bf4e20a76ef352c7d6fd58
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764997837972
+status: 3
+tags: []
+user_id: ethansaju

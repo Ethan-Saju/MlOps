@@ -6,3 +6,4 @@ fastapi
 uvicorn[standard]
 pydantic
 joblib
+mlflow==2.14.1

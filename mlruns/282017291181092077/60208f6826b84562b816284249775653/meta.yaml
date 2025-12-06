@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ethansaju/Desktop/mlops/backend/mlruns/282017291181092077/60208f6826b84562b816284249775653/artifacts
+end_time: 1764998036409
+entry_point_name: ''
+experiment_id: '282017291181092077'
+lifecycle_stage: active
+run_id: 60208f6826b84562b816284249775653
+run_name: RandomForestClassifier
+run_uuid: 60208f6826b84562b816284249775653
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764998034981
+status: 3
+tags: []
+user_id: ethansaju
