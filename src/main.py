@@ -84,14 +84,6 @@ for model in models:
 
         results.append(model_result)
 
-# with open("src/model_results.json", "w") as f:
-#     json.dump(results, f, indent=4)
-
-# with open("src/best_model_info.json", "w") as f:
-#     json.dump({
-#         "model_name": best_model["model_name"],
-#         "accuracy": best_model["accuracy"]
-#     }, f, indent=4)
 
 import pickle
 
