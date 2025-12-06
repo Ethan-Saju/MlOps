@@ -30,6 +30,7 @@ best_model = dict()
 
 results = []
 
+mlflow.set_tracking_uri("file:./mlruns")
 
 mlflow.set_experiment("Iris Species Classification")
 
